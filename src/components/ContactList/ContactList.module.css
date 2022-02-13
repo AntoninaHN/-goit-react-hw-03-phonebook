@@ -1,0 +1,24 @@
+.section {
+  display: flex;
+  justify-content: center;
+}
+ul {
+  list-style-type: none;
+}
+.list {
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+}
+.button {
+  padding: 10px 7px 10px 7px;
+  background-color: #ff69b4;
+  border: 1px solid #ff69b4;
+  color: #fff;
+  border-radius: 3px;
+  margin: 0 10px 10px 10px;
+}
+.button:hover {
+  background-color: #b2497d;
+  border: 1px solid #b2497d;
+}

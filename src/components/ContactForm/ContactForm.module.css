@@ -1,0 +1,25 @@
+.button {
+  padding: 10px 7px 10px 7px;
+  background-color: #ff69b4;
+  border: 1px solid #ff69b4;
+  color: #fff;
+  border-radius: 3px;
+}
+.button:hover {
+  background-color: #b2497d;
+  border: 1px solid #b2497d;
+}
+.label {
+  margin-right: 10px;
+}
+.input:not(:last-child) {
+  margin-right: 15px;
+}
+.input {
+  padding: 10px;
+  margin-left: 10px;
+}
+.form {
+  display: flex;
+  justify-content: center;
+}
