@@ -15,6 +15,48 @@ class App extends Component {
     ],
     filter: "",
   };
+
+  componentDidMount() {
+    const contacts = localStorage.getItem("contacts");
+    const parsedContacts = JSON.parse(contacts);
+
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      return localStorage.setItem(
+        "contacts",
+        JSON.stringify(this.state.contacts)
+      );
+    }
+  }
+
+  // componentDidMount() {
+  //   const books = localStorage.getItem("books");
+  //   if (books && JSON.parse(books).length) {
+  //     this.setState({
+  //       items: JSON.parse(books),
+  //     });
+  //   }
+  // }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.items.length !== this.state.items.length) {
+  //     // console.log("Localstorage upgrade")
+  //     const { items } = this.state;
+  //     localStorage.setItem("books", JSON.stringify(items));
+  //   }
+  // }
+
+  getFilteredContacts() {
+    return this.state.contacts.filter((contact) =>
+      contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
+    );
+  }
+
   searchName = (value) => {
     return this.state.contacts.find(
       (item) => item.name.toUpperCase() === value.toUpperCase()
